@@ -220,25 +220,25 @@ if [ "$CONFIG_FIRMWARE_ENABLE_USB" != "n" ] || [ -z "$CONFIG_USB_SUPPORT" ] ; th
 	func_disable_busybox_param "CONFIG_FEATURE_VOLUMEID_XFS"
 	func_disable_busybox_param "CONFIG_FEATURE_VOLUMEID_LINUXSWAP"
 else
-if [ "$CONFIG_FIRMWARE_ENABLE_UFSD" != "n" ] || [ $paragon_hfsplus -eq 0 ] ; then
+if [ "$CONFIG_FIRMWARE_ENABLE_UFSD" != "y" ] || [ $paragon_hfsplus -eq 0 ] ; then
 	func_disable_busybox_param "CONFIG_FEATURE_VOLUMEID_HFS"
 fi
 ############################ exFAT ####################################
-if [ "$CONFIG_FIRMWARE_ENABLE_EXFAT" != "n" ] ; then
+if [ "$CONFIG_FIRMWARE_ENABLE_EXFAT" != "y" ] ; then
 	func_disable_busybox_param "CONFIG_FEATURE_VOLUMEID_EXFAT"
 fi
 ############################# XFS #####################################
-if [ "$CONFIG_FIRMWARE_ENABLE_XFS" != "n" ] ; then
+if [ "$CONFIG_FIRMWARE_ENABLE_XFS" != "y" ] ; then
 	func_disable_busybox_param "CONFIG_FEATURE_VOLUMEID_XFS"
 fi
 ############################# SWAP ####################################
-if [ "$CONFIG_FIRMWARE_ENABLE_SWAP" != "n" ] ; then
+if [ "$CONFIG_FIRMWARE_ENABLE_SWAP" != "y" ] ; then
 	func_disable_busybox_param "CONFIG_MKSWAP"
 	func_disable_busybox_param "CONFIG_SWAPONOFF"
 fi
 fi
 ############################# XFRM ####################################
-#if [ "$CONFIG_FIRMWARE_INCLUDE_SSWAN" = "n" ] ; then
+#if [ "$CONFIG_FIRMWARE_INCLUDE_SSWAN" = "y" ] ; then
 #	CONFIG_FIRMWARE_INCLUDE_XFRM=y
 #fi
 echo --------------------------MAKE-DEP--------------------------------
